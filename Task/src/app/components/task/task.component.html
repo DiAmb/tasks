@@ -1,0 +1,38 @@
+<!-- task.component.html -->
+<div class="task-container">
+  <form [formGroup]="taskForm" (ngSubmit)="addTask()">
+    <div class="task-input">
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Task Name</mat-label>
+        <textarea matInput formControlName="name" placeholder="Enter task name" cdkTextareaAutosize
+          cdkAutosizeMinRows="1" cdkAutosizeMaxRows="6">
+        </textarea>
+
+        <mat-error *ngIf="taskForm.get('name')?.hasError('required')">
+          Task name is required.
+        </mat-error>
+        <mat-error *ngIf="taskForm.get('name')?.hasError('maxlength')">
+          Task name cannot be longer than 100 characters.
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+
+    <button mat-fab color="primary" type="submit" [disabled]="taskForm.invalid" class="add-task">
+      <mat-icon>arrow_forward</mat-icon>
+    </button>
+  </form>
+
+  <div class="task-list">
+    <mat-list>
+      <mat-list-item *ngFor="let task of tasks">
+        <div class="task-content">
+          <span>{{ task.name }}</span>
+          <button mat-icon-button color="warn" (click)="deleteTask(task.id)">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </div>
+      </mat-list-item>
+    </mat-list>
+  </div>
+</div>

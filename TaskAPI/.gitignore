@@ -1,0 +1,36 @@
+# Archivos y carpetas específicos de .NET Core
+bin/
+obj/
+
+# Carpetas generadas por Visual Studio
+.vs/
+.vscode/
+
+# Archivos de configuración del entorno
+appsettings.Development.json
+appsettings.Production.json
+appsettings.Staging.json
+
+# Archivos de dependencias y compilados de NuGet
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Archivos temporales de build
+[Dd]ebug/
+[Dd]ebugPublic/
+[Dd]ist/
+[Dd]ebug_x86/
+[Dd]ebug_x64/
+[Dd]Release/
+[Dd]Release_x86/
+[Dd]Release_x64/
+
+# Archivos generados por Visual Studio para macOS
+.vscode/
+
+# Archivos de compilación y generación de sistema
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
